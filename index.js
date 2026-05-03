@@ -5,6 +5,11 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
+// Rota para manter o servidor acordado
+app.get('/', (req, res) => {
+    res.send('Servidor do Skip Intro está online!');
+});
+
 app.get('/api/pular-abertura/:anilistId/:episodio', async (req, res) => {
     const { anilistId, episodio } = req.params;
 
